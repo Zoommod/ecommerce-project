@@ -5,11 +5,9 @@ class Produto:
         self.descricao = descricao
         self.valor = valor
 
-    def mostrar_Produtos(self):
+    def mostrar_produtos(self):
         print(f"Nome: {self.nome}")
         print(f"Código: {self.codigo}")
         print(f"Descrição: {self.descricao}")
         print(f"Valor: {self.valor}")
         print("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"*4)
-
-

@@ -4,12 +4,13 @@ class Carrinho:
         self.lista_produtos = []
         self.total = 0
 
-    def adicionar_Produto(self, produto):
+    def adicionar_produto(self, produto):
         self.lista_produtos.append(produto)
         self.total += produto.valor
         print(f"{produto.nome} adicionado ao carrinho.")
-    def mostrar_Carrinho(self):
-        print("CARRITO DE COMPRAS:")
+
+    def mostrar_carrinho(self):
+        print("CARRINHO DE COMPRAS:")
         for produto in self.lista_produtos:
             print(f"Nome: {produto.nome}")
             print(f"Valor: R${produto.valor}")
