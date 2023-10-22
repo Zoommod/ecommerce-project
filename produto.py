@@ -1,4 +1,6 @@
 from cor import CorTexto
+
+
 class Produto:
     def __init__(self, nome, codigo, descricao, valor):
         self.__nome = nome
