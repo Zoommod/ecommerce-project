@@ -10,8 +10,8 @@ class Carrinho:
         print(f"{produto.nome} adicionado ao carrinho.")
 
     def mostrar_carrinho(self):
-        print("CARRINHO DE COMPRAS:")
+        print("CARRINHO DE COMPRAS:\n")
         for produto in self.lista_produtos:
             print(f"Nome: {produto.nome}")
-            print(f"Valor: R${produto.valor}")
-            print(f"Total: R${self.total:.2f}")
+            print(f"Valor: R${produto.valor}\n")
+        print(f"Total: R${self.total:.2f}\n")

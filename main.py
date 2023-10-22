@@ -17,6 +17,7 @@ produto5 = Produto('Processador AMD Ryzen 7 5700X', '0005',
                    'De maneira impressionante, os ganhos de desempenho da arquitetura “Zen 3” podem ser fornecidos sem aumento no consumo de energia ou TDP. A combinação de uma arquitetura de última geração com o processo de 7 nm\nlíder do setor dá ao AMD Ryzen série 5000 uma melhoria de + 24% de geração em eficiência energética e uma impressionante vantagem de 2,8X sobre as arquiteturas concorrentes.',
                    1248)
 
+lista_codigo_produtos = [produto1.codigo, produto2.codigo, produto3.codigo, produto4.codigo, produto5.codigo]
 carrinho = None
 while True:
     print("============================")
@@ -28,7 +29,7 @@ while True:
     print("[6] Concluir Compra")
     print("============================")
     opcao = input(str("Escolha uma das opções: "))
-    if opcao != '1' '2' '3''4''5' '6':
+    if opcao not in ['1', '2', '3', '4', '5', '6']:
         print("Opção digitada inválida. Tente novamente!")
     if opcao == '1':
         produto1.mostrar_produtos()
@@ -41,6 +42,8 @@ while True:
             carrinho = Carrinho()
             print("O carrinho foi criado automaticamente!")
         codigo_produto = str(input("Digite o código do produto a ser adicionado ao carrinho: "))
+        if codigo_produto not in lista_codigo_produtos:
+            print("\nO código digitado não consta em nosso banco de dados. Tente novamente!")
         for produto in [produto1, produto2, produto3, produto4, produto5]:
             if produto.codigo == codigo_produto:
                 carrinho.adicionar_produto(produto)

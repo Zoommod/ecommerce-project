@@ -6,8 +6,8 @@ class Produto:
         self.valor = valor
 
     def mostrar_produtos(self):
-        print(f"Nome: {self.nome}")
+        print(f"\nNome: {self.nome}")
         print(f"Código: {self.codigo}")
         print(f"Descrição: {self.descricao}")
-        print(f"Valor: {self.valor}")
-        print("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"*4)
+        print(f"Valor: {self.valor}\n")
+        print("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"*2)
