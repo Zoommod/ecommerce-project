@@ -1,4 +1,4 @@
-from produto import Produto, produto1, produto2, produto3, produto4, produto5
+from produto import produto1, produto2, produto3, produto4, produto5
 from carrinho import Carrinho
 from compra import Compra
 from cor import CorTexto
@@ -6,6 +6,7 @@ from cor import CorTexto
 
 lista_codigo_produtos = [produto1.get_codigo(), produto2.get_codigo(), produto3.get_codigo(), produto4.get_codigo(), produto5.get_codigo()]
 carrinho = None
+
 while True:
     print(f"{CorTexto.AZUL}============================")
     print(f"{CorTexto.CIANO}[1] Visualizar Produtos")
@@ -29,6 +30,7 @@ while True:
     elif opcao == '2':
         if not carrinho:
             carrinho = Carrinho()
+            carrinho = Compra()
             print(f"\n{CorTexto.VERDE}O carrinho foi criado automaticamente!")
         codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser adicionado ao carrinho: "))
         if codigo_produto not in lista_codigo_produtos:
@@ -63,5 +65,7 @@ while True:
                         carrinho.retirar_item(produto)
 
     elif opcao == '6':
-        compra = Compra()
-        compra.cupom_fiscal(carrinho)
+        if not carrinho:
+            print(f"{CorTexto.VERMELHO}Carrinho ainda não foi criado!")
+        else:
+            carrinho.concluir_compra()
