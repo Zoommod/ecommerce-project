@@ -48,7 +48,7 @@ while True:
 
     elif opcao == '4':
         if not carrinho:
-            print(f"{CorTexto.VERMELHO}Carrinho ainda não foi criado!")
+            print(f"{CorTexto.VERMELHO}O carrinho ainda não foi criado!")
         else:
             carrinho.mostrar_carrinho()
 
@@ -66,6 +66,6 @@ while True:
 
     elif opcao == '6':
         if not carrinho:
-            print(f"{CorTexto.VERMELHO}Carrinho ainda não foi criado!")
+            print(f"\n{CorTexto.VERMELHO}O carrinho ainda não foi criado!")
         else:
             carrinho.concluir_compra()
