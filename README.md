@@ -32,7 +32,7 @@ Para executar o projeto localmente, basta você ter instalado em sua máquina o 
 Este projeto foi desenvolvido por:
 
 - Vitor Sacramento - vitor.sacramento09@gmail.com
-- Esther Rezende - ****
+- Esther Rezende - rezendealvesesther@gmail.com
 
 ## Licença
 
