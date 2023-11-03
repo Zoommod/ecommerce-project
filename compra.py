@@ -15,6 +15,6 @@ class Compra(Carrinho):
         for produto in self.lista_produtos:
             print(f"{CorTexto.CIANO}Nome: {CorTexto.BRANCO}{produto.get_nome()}")
             print(f"{CorTexto.CIANO}Valor: {CorTexto.BRANCO}R${produto.get_valor()}\n")
-
         print(f"{CorTexto.CIANO}Total: {CorTexto.BRANCO}R${self.total:.2f}\n")
         print(f"\n{CorTexto.VERDE}COMPRA CONCLUIDA COM SUCESSO!")
+
