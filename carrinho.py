@@ -20,6 +20,17 @@ class Carrinho:
             print(f"Valor: R${produto.get_valor()}\n")
         print(f"Total: R${self.total:.2f}\n")
 
+    def concluir_compra(self):
+        if not self.lista_produtos:
+            print(f"\n{CorTexto.VERMELHO}O carrinho está vazio. Adicione produtos antes de concluir a compra.")
+            return
+
+        print("\nCUPOM FISCAL:\n")
+        for produto in self.lista_produtos:
+            print(f"{CorTexto.CIANO}Nome: {CorTexto.BRANCO}{produto.get_nome()}")
+            print(f"{CorTexto.CIANO}Valor: {CorTexto.BRANCO}R${produto.get_valor()}\n")
+        print(f"{CorTexto.CIANO}Total: {CorTexto.BRANCO}R${self.total:.2f}")
+
     def retirar_item(self, produto):
         if produto.get_codigo() in self.lista_codigos_carrinho:
             self.lista_codigos_carrinho.remove(produto.get_codigo())
