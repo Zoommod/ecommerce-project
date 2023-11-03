@@ -29,7 +29,6 @@ while True:
 
     elif opcao == '2':
         if not carrinho:
-            carrinho = Carrinho()
             carrinho = Compra()
             print(f"\n{CorTexto.VERDE}O carrinho foi criado automaticamente!")
         codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser adicionado ao carrinho: "))
@@ -41,7 +40,7 @@ while True:
 
     elif opcao == '3':
         if not carrinho:
-            carrinho = Carrinho()
+            carrinho = Compra()
             print(f"\n{CorTexto.VERDE}O carrinho foi criado com sucesso!")
         else:
             print(f"{CorTexto.VERMELHO}O carrinho já foi criado anteriormente!")
