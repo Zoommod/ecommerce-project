@@ -1,16 +1,17 @@
 from produto import produto1, produto2, produto3, produto4, produto5
-from carrinho import Carrinho
+from produto_terceiro import ProdutoTerceiro, produto6, produto7
+from compra_loja import CompraLoja
 from compra import Compra
 from cor import CorTexto
 
 
-lista_codigo_produtos = [produto1.get_codigo(), produto2.get_codigo(), produto3.get_codigo(), produto4.get_codigo(), produto5.get_codigo()]
+lista_codigo_produtos = [produto1.get_codigo(), produto2.get_codigo(), produto3.get_codigo(), produto4.get_codigo(), produto5.get_codigo(), produto6.get_codigo(), produto7.get_codigo()]
 carrinho = None
 
 while True:
     print(f"{CorTexto.AZUL}============================")
     print(f"{CorTexto.CIANO}[1] Visualizar Produtos")
-    print(f"{CorTexto.CIANO}[2] Adicionar Produto")
+    print(f"{CorTexto.CIANO}[2] Adicionar Produto ao Carrinho")
     print(f"{CorTexto.CIANO}[3] Criar Carrinho")
     print(f"{CorTexto.CIANO}[4] Visualizar Carrinho")
     print(f"{CorTexto.CIANO}[5] Retirar Item")
@@ -26,22 +27,43 @@ while True:
         produto3.mostrar_produtos()
         produto4.mostrar_produtos()
         produto5.mostrar_produtos()
+        produto6.mostrar_produtos()
+        produto7.mostrar_produtos()
 
     elif opcao == '2':
-        if not carrinho:
-            carrinho = Compra()
-            print(f"\n{CorTexto.VERDE}O carrinho foi criado automaticamente!")
         codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser adicionado ao carrinho: "))
         if codigo_produto not in lista_codigo_produtos:
             print(f"\n{CorTexto.VERMELHO}O código digitado não consta em nosso banco de dados. Tente novamente!")
-        for produto in [produto1, produto2, produto3, produto4, produto5]:
-            if produto.get_codigo() == codigo_produto:
-                carrinho.adicionar_produto(produto)
+
+        else:
+            if not carrinho:
+                tipo_entrega = input(f"{CorTexto.CIANO}Digite '1' para entrega em casa ou '2' para retirada na loja: ")
+                if tipo_entrega == '1':
+                    carrinho = Compra()
+                    print(f"\n{CorTexto.VERDE}O carrinho para entrega em casa foi criado com sucesso!")
+
+                elif tipo_entrega == '2':
+                    data_retirada = input(f"{CorTexto.CIANO}Digite a data de retirada (dd/mm/aaaa): ")
+                    carrinho = CompraLoja(data_retirada)
+                    print(f"\n{CorTexto.VERDE}O carrinho para retirada na loja foi criado com sucesso!")
+
+                else:
+                    print(f"\n{CorTexto.VERMELHO}Opção digitada inválida. Tente novamente!")
+
+            for produto in [produto1, produto2, produto3, produto4, produto5, produto6, produto7]:
+                if produto.get_codigo() == codigo_produto:
+                    carrinho.adicionar_produto(produto)
 
     elif opcao == '3':
         if not carrinho:
-            carrinho = Compra()
-            print(f"\n{CorTexto.VERDE}O carrinho foi criado com sucesso!")
+            tipo_entrega = input(f"{CorTexto.CIANO}Digite '1' para entrega em casa ou '2' para retirada na loja: ")
+            if tipo_entrega == '1':
+                carrinho = Compra()
+                print(f"\n{CorTexto.VERDE}O carrinho para entrega em casa foi criado com sucesso!")
+            elif tipo_entrega == '2':
+                data_retirada = input(f"{CorTexto.CIANO}Digite a data de retirada (dd/mm/aaaa): ")
+                carrinho = CompraLoja(data_retirada)
+                print(f"\n{CorTexto.VERDE}O carrinho para retirada na loja foi criado com sucesso!")
         else:
             print(f"{CorTexto.VERMELHO}O carrinho já foi criado anteriormente!")
 
@@ -59,7 +81,7 @@ while True:
             if codigo_produto not in lista_codigo_produtos:
                 print(f"\n{CorTexto.VERMELHO}O código digitado não é de um produto existente. Tente novamente!")
             else:
-                for produto in [produto1, produto2, produto3, produto4, produto5]:
+                for produto in [produto1, produto2, produto3, produto4, produto5, produto5, produto6, produto7]:
                     if produto.get_codigo() == codigo_produto:
                         carrinho.retirar_item(produto)
 
