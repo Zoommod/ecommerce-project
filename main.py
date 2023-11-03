@@ -68,3 +68,4 @@ while True:
             print(f"\n{CorTexto.VERMELHO}O carrinho ainda não foi criado!")
         else:
             carrinho.concluir_compra()
+            carrinho = None
