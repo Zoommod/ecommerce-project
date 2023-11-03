@@ -24,8 +24,8 @@ class Produto:
         print(f"\n{CorTexto.CIANO}Nome: {CorTexto.BRANCO}{self.get_nome()}")
         print(f"{CorTexto.CIANO}Código: {CorTexto.BRANCO}{self.get_codigo()}")
         print(f"{CorTexto.CIANO}Descrição: {CorTexto.BRANCO}{self.get_descricao()}")
-        print(f"{CorTexto.CIANO}Valor: {CorTexto.BRANCO}R${self.get_valor()}\n")
-        print(f"{CorTexto.AZUL}=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*" * 2)
+        print(f"{CorTexto.CIANO}Valor: {CorTexto.BRANCO}R${self.get_valor()}")
+
 
 
 produto1 = Produto('Smartphone Galaxy S23 Ultra', '0001',
