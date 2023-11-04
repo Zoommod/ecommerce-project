@@ -18,7 +18,7 @@ while True:
     print(f"{CorTexto.CIANO}[6] Concluir Compra")
     print(f"{CorTexto.CIANO}[0] Sair do Programa")
     print(f"{CorTexto.AZUL}============================")
-    opcao = input(str(f"{CorTexto.CIANO}Escolha uma das opções: "))
+    opcao = input(str(f"{CorTexto.CIANO}Escolha uma das opções: ")).strip()
     if opcao not in ['0', '1', '2', '3', '4', '5', '6']:
         print(f"\n{CorTexto.VERMELHO}Opção digitada inválida. Tente novamente!")
 
@@ -32,16 +32,17 @@ while True:
         produto7.mostrar_produtos()
 
     elif opcao == '2':
-        codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser adicionado ao carrinho: "))
+        codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser adicionado ao carrinho: ")).strip()
         if codigo_produto not in lista_codigo_produtos:
             print(f"\n{CorTexto.VERMELHO}O código digitado não consta em nosso banco de dados. Tente novamente!")
 
         else:
             if not carrinho:
-                tipo_entrega = None
+                tipo_entrega = ''
                 while tipo_entrega not in ('1', '2'):
-                    tipo_entrega = input(f"{CorTexto.CIANO}Digite '1' para entrega em casa ou '2' para retirada na loja: ")
-                    print(f"{CorTexto.VERMELHO}Opção digitada inválida. Tente novamente!")
+                    if tipo_entrega != '':
+                        print(f"{CorTexto.VERMELHO}Opção digitada inválida. Tente novamente!")
+                    tipo_entrega = input(f"{CorTexto.CIANO}Digite '1' para entrega em casa ou '2' para retirada na loja: ").strip()
                 if tipo_entrega == '1':
                     carrinho = Compra()
                     print(f"\n{CorTexto.VERDE}O carrinho para entrega em casa foi criado com sucesso!")
@@ -51,16 +52,17 @@ while True:
                     carrinho = CompraLoja(data_retirada)
                     print(f"\n{CorTexto.VERDE}O carrinho para retirada na loja foi criado com sucesso!")
 
-                else:
-                    print(f"\n{CorTexto.VERMELHO}Opção digitada inválida. Tente novamente!")
-
             for produto in [produto1, produto2, produto3, produto4, produto5, produto6, produto7]:
                 if produto.get_codigo() == codigo_produto:
                     carrinho.adicionar_produto(produto)
 
     elif opcao == '3':
         if not carrinho:
-            tipo_entrega = input(f"{CorTexto.CIANO}Digite '1' para entrega em casa ou '2' para retirada na loja: ")
+            tipo_entrega = ''
+            while tipo_entrega not in ('1', '2'):
+                if tipo_entrega != '':
+                    print(f"{CorTexto.VERMELHO}Opção digitada inválida. Tente novamente!")
+                tipo_entrega = input(f"{CorTexto.CIANO}Digite '1' para entrega em casa ou '2' para retirada na loja: ").strip()
             if tipo_entrega == '1':
                 carrinho = Compra()
                 print(f"\n{CorTexto.VERDE}O carrinho para entrega em casa foi criado com sucesso!")
@@ -81,7 +83,7 @@ while True:
         if not carrinho:
             print(f"{CorTexto.VERMELHO}Carrinho ainda não foi criado!")
         else:
-            codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser removido do carrinho: "))
+            codigo_produto = str(input(f"{CorTexto.CIANO}Digite o código do produto a ser removido do carrinho: ")).strip()
             if codigo_produto not in lista_codigo_produtos:
                 print(f"\n{CorTexto.VERMELHO}O código digitado não é de um produto existente. Tente novamente!")
             else:
