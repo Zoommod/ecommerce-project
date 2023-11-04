@@ -15,8 +15,8 @@ class CompraLoja(Carrinho):
 
     def mostrar_carrinho(self):
         super().mostrar_carrinho()
+        print(f"{CorTexto.CIANO}Total com desconto: {CorTexto.BRANCO}R${self.calcular_total():.2f}")
         print(f"{CorTexto.CIANO}Data de Retirada: {CorTexto.BRANCO}{self.get_data_retirada()}\n")
-        print(f"{CorTexto.CIANO}Total com desconto: {CorTexto.BRANCO}R${self.calcular_total():.2f}\n")
 
     def concluir_compra(self):
         super().concluir_compra()

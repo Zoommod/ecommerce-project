@@ -13,7 +13,6 @@ class ProdutoTerceiro(Produto):
     def mostrar_produtos(self):
         super().mostrar_produtos()
         print(f"{CorTexto.CIANO}Vendedor: {CorTexto.BRANCO}{self.get_vendedor()}\n")
-        print(f"{CorTexto.AZUL}=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*" * 2)
 
 
 produto6 = ProdutoTerceiro('Apple Iphone 13', '0006',
