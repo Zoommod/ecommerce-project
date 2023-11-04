@@ -27,7 +27,6 @@ class Produto:
         print(f"{CorTexto.CIANO}Valor: {CorTexto.BRANCO}R${self.get_valor()}")
 
 
-
 produto1 = Produto('Smartphone Galaxy S23 Ultra', '0001',
                    'O Samsung Galaxy S23 Ultra é um smartphone de ponta lançado pela Samsung, oferecendo uma variedade de recursos de alta qualidade. Ele apresenta um design elegante e uma tela AMOLED de alta resolução com taxa \nde atualização aprimorada para uma experiência visual excepcional.',
                    3149)
